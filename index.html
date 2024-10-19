@@ -1,13 +1,93 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+import React from 'react';
+
+const WebpageRenderer = () => {
+  return (
+    <div style={{
+      fontFamily: 'Inter, sans-serif',
+      backgroundColor: '#FFD700',
+      color: '#000000',
+      lineHeight: 1.6,
+      padding: '20px',
+      height: '100vh',
+      overflow: 'auto'
+    }}>
+      <div style={{
+        maxWidth: '1000px',
+        margin: '0 auto',
+        backgroundColor: '#FFFFFF',
+        border: '3px solid #000000',
+        boxShadow: '8px 8px 0 #000000',
+        padding: '30px',
+        position: 'relative'
+      }}>
+        <header style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'flex-start',
+          marginBottom: '40px'
+        }}>
+          <div>
+            <div style={{
+              fontWeight: 'bold',
+              fontSize: '1.2rem'
+            }}>HeiyoAerry</div>
+            <div style={{
+              backgroundColor: '#90EE90',
+              padding: '5px 10px',
+              border: '2px solid #000000',
+              fontSize: '0.8rem',
+              display: 'inline-block',
+              marginTop: '5px'
+            }}>Available for work</div>
+          </div>
+          <nav style={{textAlign: 'right'}}>
+            <a href="#" style={{display: 'block', color: '#000000', textDecoration: 'none', marginBottom: '5px'}}>Dribbble</a>
+            <a href="#" style={{display: 'block', color: '#000000', textDecoration: 'none', marginBottom: '5px'}}>Github</a>
+            <a href="#" style={{display: 'block', color: '#000000', textDecoration: 'none', marginBottom: '5px'}}>Blogs</a>
+          </nav>
+        </header>
+        
+        <main style={{marginBottom: '40px'}}>
+          <h1 style={{fontSize: '1.5rem', marginBottom: '10px'}}>
+            <span style={{backgroundColor: '#90EE90', padding: '0 5px'}}>Hello, Jun here!</span>
+          </h1>
+          <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start'}}>
+            <h2 style={{fontSize: '5rem', lineHeight: 1.2, marginBottom: '20px', flex: 1}}>Automation Tester</h2>
+            <div style={{flex: 1, paddingLeft: '20px'}}>
+              <p style={{marginBottom: '20px'}}>Malaysian based tester. Part-time UI/UX designer that create meaningful product through experiences and testing. Somewhat a scrum master.</p>
+              <p style={{marginBottom: '20px'}}>I love digging into human problem and try to improve it using technology.</p>
+              <p style={{marginBottom: '20px'}}>What's next? Product Management. Yes.</p>
+            </div>
+          </div>
+          <a href="#" style={{
+            display: 'inline-block',
+            padding: '10px 20px',
+            backgroundColor: '#90EE90',
+            color: '#000000',
+            textDecoration: 'none',
+            border: '2px solid #000000',
+            boxShadow: '3px 3px 0 #000000'
+          }}>Drop Me A Line →</a>
+        </main>
+        
+        <footer style={{
+          backgroundColor: '#FA8072',
+          margin: '0 -30px -30px',
+          padding: '20px 30px',
+          overflow: 'hidden'
+        }}>
+          <div style={{display: 'flex', width: '300%'}}>
+            <div style={{flex: '1', textAlign: 'center', padding: '0 10px'}}>UI/UX Design</div>
+            <div style={{flex: '1', textAlign: 'center', padding: '0 10px'}}>QA Testing And User Experience Improvement</div>
+            <div style={{flex: '1', textAlign: 'center', padding: '0 10px'}}>Consulting and Advisory Services</div>
+          </div>
+        </footer>
+      </div>
+      <div style={{textAlign: 'center', marginTop: '20px', fontSize: '0.8rem'}}>
+        Design by Aerry Asmani &nbsp;&nbsp;&nbsp; Develop by Zachry Romi
+      </div>
+    </div>
+  );
+};
+
+export default WebpageRenderer;
