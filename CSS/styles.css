@@ -3,7 +3,7 @@
     --light-green: #90EE90;
     --salmon: #FA8072;
     --black: #000000;
-    --white: #FFFFFF;
+    --white: #FFFFF4;
     --DarkCharcoal: #292C33;
 }
 * {
@@ -36,6 +36,7 @@ body {
     flex-direction: column;
     min-height: 80vh;
     z-index: 1;
+    
 }
 
 header {
