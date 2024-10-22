@@ -5,202 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HeiyoAerry - Automation Tester</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --yellow: #FFD700;
-            --light-green: #90EE90;
-            --salmon: #FA8072;
-            --black: #000000;
-            --white: #FFFFFF;
-            --DarkCharcoal: #292C33;
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--yellow);
-            color: var(--black);
-            line-height: 1.6;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-image: linear-gradient(#000000 1px, transparent 1px), linear-gradient(90deg, #000000 1px, transparent 1px);
-            background-size: 50px 50px;
-        }
-        .container {
-            width: 100%;
-            max-width: 1000px;
-            background-color: var(--white);
-            border: 6px solid var(--black);
-            box-shadow: 24px 18px 0 var(--DarkCharcoal);
-            padding: 30px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            min-height: 80vh;
-        }
-        header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 40px;
-        }
-        .logo {
-            font-weight: bold;
-            font-size: 1.2rem;
-            padding: 0 5px;
-        }
-        .availability {
-            background-color: var(--salmon);
-            padding: 5px 10px;
-            border: 2px solid var(--black);
-            font-size: 0.8rem;
-            display: inline-flex;
-            align-items: center;
-            margin-top: 10px;
-        }
-        .availability-circle {
-            width: 10px;
-            height: 10px;
-            background-color: var(--light-green);
-            border-radius: 50%;
-            margin-right: 5px;
-            animation: blink 1s infinite;
-        }
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-        nav {
-            margin-top: 20px;
-            text-align: center;
-        }
-        nav a {
-            display: inline-block;
-            color: var(--black);
-            text-decoration: none;
-            margin: 0 10px 5px;
-        }
-        .main-content {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        h1 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-        h1 span {
-            background-color: var(--light-green);
-            padding: 0 5px;
-        }
-        .flex-container {
-            display: flex;
-            flex-direction: column;
-        }
-        h2 {
-            font-size: 3rem;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-        .description {
-            margin-top: 20px;
-        }
-        .cta-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: var(--light-green);
-            color: var(--black);
-            text-decoration: none;
-            border: 4px solid var(--black);
-            box-shadow: 6px 6px 0 var(--DarkCharcoal);
-            transition: all 0.3s ease;
-            margin-top: 10px;
-            align-self: flex-start;
-        }
-        .cta-button:hover {
-            background-color: var(--black);
-            color: var(--light-green);
-            box-shadow: 5px 5px 0 var(--light-green);
-        }
-        footer {
-            background-color: var(--salmon);
-            margin: 20px -30px -30px;
-            padding: 20px 30px;
-            overflow: hidden;
-        }
-        .footer-carousel {
-            display: flex;
-            animation: slide 30s linear infinite;
-        }
-        .footer-item {
-            flex: 0 0 100%;
-            text-align: center;
-            padding: 0 10px;
-        }
-        @keyframes slide {
-            0% { transform: translateX(0%); }
-            33.33% { transform: translateX(-100%); }
-            66.66% { transform: translateX(-200%); }
-            100% { transform: translateX(0%); }
-        }
-        .design-credit {
-            text-align: center;
-            font-size: 0.8rem;
-            margin-top: 20px;
-        }
+    <link rel="stylesheet" href="CSS/styles.css">
 
-        @media (min-width: 768px) {
-            header {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: flex-start;
-            }
-            .logo-availability {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            nav {
-                text-align: right;
-                margin-top: 0;
-            }
-            .flex-container {
-                flex-direction: row;
-                align-items: flex-start;
-            }
-            h2 {
-                font-size: 5rem;
-                flex: 1;
-            }
-            .description {
-                flex: 1;
-                padding-left: 20px;
-                margin-top: 0;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding: 10px;
-            }
-            .container {
-                padding: 20px;
-                box-shadow: 9px 7px 0 var(--black);
-            }
-            h2 {
-                font-size: 2.5rem;
-            }
-        }
-    </style>
 </head>
-<body>
+<body>      
     <div class="container">
         <header>
             <div class="logo-availability">
@@ -219,7 +27,8 @@
         <main class="main-content">
             <h1><span>Hello, Jun here!</span></h1>
             <div class="flex-container">
-                <h2>Automation Tester</h2>
+                <h2>Automation Tester </h2>
+                <!-- <h4>(Currently)</h4>*/-->
                 <div class="description">
                     <p>Malaysian based tester.</p>
                     <br>
@@ -237,13 +46,11 @@
         </main>
         
         <footer>
-            <div class="footer-carousel">
-                <div class="footer-item">UI/UX Design</div>
-                <div class="footer-item">QA Testing And User Experience Improvement</div>
-                <div class="footer-item">Consulting and Advisory Services</div>
-                <div class="footer-item">Can We Dance</div>
-            </div>
+            <div>UI/UX Design</div>
+            <div>QA Testing And User Experience Improvement</div>
+            <div>Consulting and Advisory Services</div>
         </footer>
+            <br>
     </div>
 </body>
 </html>
