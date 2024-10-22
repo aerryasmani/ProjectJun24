@@ -99,7 +99,7 @@ nav {
     transition: all 0.3s ease;
     width: 40px;
     height: 40px;
-    box-shadow: 3px 4px 0 var(--DarkCharcoal);
+    box-shadow: 3px 2px 0 var(--DarkCharcoal);
 }
 
 .nav-button i {
