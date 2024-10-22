@@ -1,4 +1,3 @@
-
 :root {
     --yellow: #FFD700;
     --light-green: #90EE90;
@@ -36,18 +35,22 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 80vh;
+    z-index: 1;
 }
+
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 40px;
 }
+
 .logo {
     font-weight: bold;
     font-size: 1.2rem;
     padding: 0 5px;
 }
+
 .availability {
     background-color: var(--salmon);
     padding: 5px 10px;
@@ -57,6 +60,7 @@ header {
     align-items: center;
     margin-top: 10px;
 }
+
 .availability-circle {
     width: 10px;
     height: 10px;
@@ -65,51 +69,121 @@ header {
     margin-right: 5px;
     animation: blink 1s infinite;
 }
+
 @keyframes blink {
     0% { opacity: 1; }
     50% { opacity: 0; }
     100% { opacity: 1; }
 }
+
+/* Updated Navigation Styles */
 nav {
     margin-top: 20px;
     text-align: center;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
 }
-nav a {
-    display: inline-block;
+
+.nav-button {
+    position: relative;
     color: var(--black);
     text-decoration: none;
-    margin: 0 10px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: var(--white);
+    border: 2px solid var(--black);
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
 }
+
+.nav-button i {
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.nav-button .nav-text {
+    position: absolute;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    top: 100%;
+    margin-top: 5px;
+}
+
+.nav-button .nav-text::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 8px;
+    height: 8px;
+    background-color: var(--black);
+}
+
+.nav-button:hover {
+    background-color: var(--black);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.nav-button:hover .nav-text {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Rest of your existing styles */
 .main-content {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
+
 h1 {
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
+
 h1 span {
     background-color: var(--light-green);
     padding: 0 5px;
 }
+
 .flex-container {
     display: flex;
     flex-direction: column;
 }
+
 h2 {
     font-size: 3rem;
     line-height: 1.2;
     margin-bottom: 20px;
 }
+
 h4 {
     font-size: 1rem;
     line-height: 0.6;
     margin-bottom: 5px;
 }
+
 .description {
     margin-top: 20px;
 }
+
 .cta-button {
     display: inline-block;
     padding: 10px 20px;
@@ -128,6 +202,7 @@ h4 {
     color: var(--light-green);
     box-shadow: 5px 5px 0 var(--light-green);
 }
+
 footer {
     background-color: var(--salmon);
     margin: 20px -30px -30px;
@@ -145,23 +220,13 @@ footer div {
     padding: 0 10px;
 }
 
-/* Remove old footer carousel styles */
-.footer-carousel, .footer-item {
-    animation: none;
-}
-
-@keyframes slide {
-    0% { transform: translateX(0%); }
-    33.33% { transform: translateX(-100%); }
-    66.66% { transform: translateX(-200%); }
-    100% { transform: translateX(0%); }
-}
 .design-credit {
     text-align: center;
     font-size: 0.8rem;
     margin-top: 20px;
 }
 
+/* Media Queries */
 @media (min-width: 768px) {
     header {
         flex-direction: row;
@@ -216,8 +281,14 @@ footer div {
         gap: 10px;
         padding: 15px;
     }
-    
     footer div {
         padding: 5px 0 5px 0;
+    }
+    .nav-button {
+        width: 35px;
+        height: 35px;
+    }
+    .nav-button i {
+        font-size: 1rem;
     }
 }
