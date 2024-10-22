@@ -7,14 +7,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Add your styles for the pop-up card here */
+        .popup-card {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            z-index: 1000;
+            overflow: hidden;
+        }
+        
+        .popup-card iframe {
+            width: 100%;
+            border: none;
+        }
+    </style>
 </head>
 
-<body>   
+<body>
     <div class="container">
         <header>
             <div class="logo-availability">
                 <div class="logo">HeiyoAerry</div>
-                <div class="availability">            
+                <div class="availability">
                     <div class="availability-circle"></div>Available for work
                 </div>
             </div>
@@ -29,7 +48,11 @@
                 </a>
                 <a href="#" class="nav-button">
                     <i class="fa-brands fa-medium"></i>
-                    <span class="nav-text">Blogs</span>
+                    <span class="nav-text">Medium</span>
+                </a>
+                <a href="#" class="nav-button">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <span class="nav-text">LinkedIn</span>
                 </a>
             </nav>
         </header>
@@ -38,6 +61,7 @@
             <h1><span>Hello, Jun here!</span></h1>
             <div class="flex-container">
                 <h2>Automation Tester </h2>
+
                 <div class="description">
                     <p>Malaysian based tester.</p>
                     <br>
@@ -60,6 +84,7 @@
             <div>Consulting and Advisory Services</div>
         </footer>
         <br>
-    </div>
+    </div> 
 </body>
+
 </html>
