@@ -1,93 +1,247 @@
-import React from 'react';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeiyoAerry - Automation Tester</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --yellow: #FFD700;
+            --light-green: #90EE90;
+            --salmon: #FA8072;
+            --black: #000000;
+            --white: #FFFFFF;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--yellow);
+            color: var(--black);
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: linear-gradient(#000000 1px, transparent 1px), linear-gradient(90deg, #000000 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            background-color: var(--white);
+            border: 3px solid var(--black);
+            box-shadow: 18px 14px 0 var(--black);
+            padding: 30px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 80vh;
+        }
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 0 5px;
+        }
+        .availability {
+            background-color: var(--salmon);
+            padding: 5px 10px;
+            border: 2px solid var(--black);
+            font-size: 0.8rem;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .availability-circle {
+            width: 10px;
+            height: 10px;
+            background-color: var(--light-green);
+            border-radius: 50%;
+            margin-right: 5px;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        nav {
+            margin-top: 20px;
+            text-align: center;
+        }
+        nav a {
+            display: inline-block;
+            color: var(--black);
+            text-decoration: none;
+            margin: 0 10px 5px;
+        }
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        h1 span {
+            background-color: var(--light-green);
+            padding: 0 5px;
+        }
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+        }
+        h2 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .description {
+            margin-top: 20px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--light-green);
+            color: var(--black);
+            text-decoration: none;
+            border: 2px solid var(--black);
+            box-shadow: 6px 6px 0 var(--black);
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            align-self: flex-start;
+        }
+        .cta-button:hover {
+            background-color: var(--black);
+            color: var(--light-green);
+            box-shadow: 5px 5px 0 var(--light-green);
+        }
+        footer {
+            background-color: var(--salmon);
+            margin: 20px -30px -30px;
+            padding: 20px 30px;
+            overflow: hidden;
+        }
+        .footer-carousel {
+            display: flex;
+            animation: slide 30s linear infinite;
+        }
+        .footer-item {
+            flex: 0 0 100%;
+            text-align: center;
+            padding: 0 10px;
+        }
+        @keyframes slide {
+            0% { transform: translateX(0%); }
+            33.33% { transform: translateX(-100%); }
+            66.66% { transform: translateX(-200%); }
+            100% { transform: translateX(0%); }
+        }
+        .design-credit {
+            text-align: center;
+            font-size: 0.8rem;
+            margin-top: 20px;
+        }
 
-const WebpageRenderer = () => {
-  return (
-    <div style={{
-      fontFamily: 'Inter, sans-serif',
-      backgroundColor: '#FFD700',
-      color: '#000000',
-      lineHeight: 1.6,
-      padding: '20px',
-      height: '100vh',
-      overflow: 'auto'
-    }}>
-      <div style={{
-        maxWidth: '1000px',
-        margin: '0 auto',
-        backgroundColor: '#FFFFFF',
-        border: '3px solid #000000',
-        boxShadow: '8px 8px 0 #000000',
-        padding: '30px',
-        position: 'relative'
-      }}>
-        <header style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'flex-start',
-          marginBottom: '40px'
-        }}>
-          <div>
-            <div style={{
-              fontWeight: 'bold',
-              fontSize: '1.2rem'
-            }}>HeiyoAerry</div>
-            <div style={{
-              backgroundColor: '#90EE90',
-              padding: '5px 10px',
-              border: '2px solid #000000',
-              fontSize: '0.8rem',
-              display: 'inline-block',
-              marginTop: '5px'
-            }}>Available for work</div>
-          </div>
-          <nav style={{textAlign: 'right'}}>
-            <a href="#" style={{display: 'block', color: '#000000', textDecoration: 'none', marginBottom: '5px'}}>Dribbble</a>
-            <a href="#" style={{display: 'block', color: '#000000', textDecoration: 'none', marginBottom: '5px'}}>Github</a>
-            <a href="#" style={{display: 'block', color: '#000000', textDecoration: 'none', marginBottom: '5px'}}>Blogs</a>
-          </nav>
+        @media (min-width: 768px) {
+            header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+            .logo-availability {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            nav {
+                text-align: right;
+                margin-top: 0;
+            }
+            .flex-container {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            h2 {
+                font-size: 5rem;
+                flex: 1;
+            }
+            .description {
+                flex: 1;
+                padding-left: 20px;
+                margin-top: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 20px;
+                box-shadow: 9px 7px 0 var(--black);
+            }
+            h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-availability">
+                <div class="logo">HeiyoAerry</div>
+                <div class="availability">            
+                    <div class="availability-circle"></div>Available for work
+                </div>
+            </div>
+            <nav>
+                <a href="#" class="nav-button">Dribbble</a>
+                <a href="#" class="nav-button">Github</a>
+                <a href="#" class="nav-button">Blogs</a>
+            </nav>
         </header>
         
-        <main style={{marginBottom: '40px'}}>
-          <h1 style={{fontSize: '1.5rem', marginBottom: '10px'}}>
-            <span style={{backgroundColor: '#90EE90', padding: '0 5px'}}>Hello, Jun here!</span>
-          </h1>
-          <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start'}}>
-            <h2 style={{fontSize: '5rem', lineHeight: 1.2, marginBottom: '20px', flex: 1}}>Automation Tester</h2>
-            <div style={{flex: 1, paddingLeft: '20px'}}>
-              <p style={{marginBottom: '20px'}}>Malaysian based tester. Part-time UI/UX designer that create meaningful product through experiences and testing. Somewhat a scrum master.</p>
-              <p style={{marginBottom: '20px'}}>I love digging into human problem and try to improve it using technology.</p>
-              <p style={{marginBottom: '20px'}}>What's next? Product Management. Yes.</p>
+        <main class="main-content">
+            <h1><span>Hello, Jun here!</span></h1>
+            <div class="flex-container">
+                <h2>Automation Tester</h2>
+                <div class="description">
+                    <p>Malaysian based tester.</p>
+                    <br>
+                    <p>UI/UX designer that create meaningful product through experiences and testing.</p>
+                    <br>
+                    <p>Somewhat a scrum master.</p>
+                    <br>
+                    <p>I love digging into human problem and try to improve it using technology.</p>
+                    <br>
+                    <p>What's next?</p>
+                    <p>Product Management. Yes</p>
+                </div>
             </div>
-          </div>
-          <a href="#" style={{
-            display: 'inline-block',
-            padding: '10px 20px',
-            backgroundColor: '#90EE90',
-            color: '#000000',
-            textDecoration: 'none',
-            border: '2px solid #000000',
-            boxShadow: '3px 3px 0 #000000'
-          }}>Drop Me A Line →</a>
+            <a href="#" class="cta-button">Drop Me A Line →</a>
         </main>
         
-        <footer style={{
-          backgroundColor: '#FA8072',
-          margin: '0 -30px -30px',
-          padding: '20px 30px',
-          overflow: 'hidden'
-        }}>
-          <div style={{display: 'flex', width: '300%'}}>
-            <div style={{flex: '1', textAlign: 'center', padding: '0 10px'}}>UI/UX Design</div>
-            <div style={{flex: '1', textAlign: 'center', padding: '0 10px'}}>QA Testing And User Experience Improvement</div>
-            <div style={{flex: '1', textAlign: 'center', padding: '0 10px'}}>Consulting and Advisory Services</div>
-          </div>
+        <footer>
+            <div class="footer-carousel">
+                <div class="footer-item">UI/UX Design</div>
+                <div class="footer-item">QA Testing And User Experience Improvement</div>
+                <div class="footer-item">Consulting and Advisory Services</div>
+            </div>
         </footer>
-      </div>
-      <div style={{textAlign: 'center', marginTop: '20px', fontSize: '0.8rem'}}>
-        Design by Aerry Asmani &nbsp;&nbsp;&nbsp; Develop by Zachry Romi
-      </div>
     </div>
-  );
-};
-
-export default WebpageRenderer;
+</body>
+</html>
