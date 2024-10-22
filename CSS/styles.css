@@ -36,7 +36,10 @@ body {
     flex-direction: column;
     min-height: 80vh;
     z-index: 1;
-    
+    background-image: url("../img/2259.jpg");
+    filter: contrast(110%) /* Increase contrast */
+    brightness(105%) /* Slightly brighter */
+    saturate(110%);
 }
 
 header {
