@@ -224,9 +224,10 @@ footer {
 }
 
 footer div {
-    font-size: 0.9rem;
+    font-size: 1rem;
     white-space: nowrap;
-    padding: 0 5px;
+    padding: 0 100px;
+    align-items: center;
 }
 
 .design-credit {
