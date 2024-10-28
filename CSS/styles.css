@@ -14,7 +14,7 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;  /* This is the name you'll use to reference the font */
+    font-family: 'DM Sans', sans-serif; /* This is the name you'll use to reference the font */
     background-color: var(--yellow);
     color: var(--black);
     line-height: 1.6;
@@ -23,9 +23,22 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: linear-gradient(#000000 1px, transparent 1px), linear-gradient(90deg, #000000 1px, transparent 1px);
+    background-image: 
+        linear-gradient(#000000 2px, transparent 1px),
+        linear-gradient(90deg, #000000 2px, transparent 1px);
     background-size: 50px 50px;
-    position: relative; /* Ensure body is a positioning context */
+    position: relative;
+    animation: moveGrid 4s linear infinite; /* Add this line for animation */
+    
+}
+
+@keyframes moveGrid {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 50px 50px; /* Adjust this value for speed/direction */
+    }
 }
 
 .page-wrapper {
@@ -324,7 +337,7 @@ footer div {
 
 .card {
     background-color: var(--white);
-    border: 4px solid var(--black);
+    border: 6px solid var(--black);
     background-image: url("../img/2259.jpg");
     background-image: url("../img/Paper 18.png");
     border-radius: 0px;
@@ -347,7 +360,7 @@ footer div {
 
 .card-header {
     display: flex;
-    align-items: center;
+    
     gap: 0.75rem;
     margin-bottom: 1.5rem;
     color: inherit;
@@ -469,12 +482,13 @@ footer div {
     width: 60px;  /* Increased from 50px */
     height: 60px; /* Increased from 50px */
     background-color: var(--light-green);
-    border: 3px solid var(--black);
+    border: 4px solid var(--black);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    box-shadow: 4px 2px 0 var(--DarkCharcoal);
 }
 
 .tech-circle i {
@@ -657,5 +671,6 @@ footer div {
         transform: translateY(-100vh) rotate(360deg);
     }
 }
+ 
 
 
