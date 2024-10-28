@@ -326,7 +326,7 @@ footer div {
     background-color: var(--white);
     border: 4px solid var(--black);
     border-radius: 25px;
-    box-shadow: 12px 12px 0 var(--dark-charcoal);
+    box-shadow: 12px 18px 0 var(--DarkCharcoal); /*Card Shadow*/
     padding: 1.5rem;
     transition: transform 0.3s ease;
 }
@@ -350,7 +350,7 @@ footer div {
 
 .card-header i {
     font-size: 1.5rem;
-    background-color: var(--light-green);
+    background-color: var(--salmon);
     padding: 0.5rem;
     border: 3px solid var(--black);
     border-radius: 50%;
@@ -548,6 +548,51 @@ footer div {
 
     .tech-item span {
         font-size: 0.8rem;  /* Adjusted for mobile */
+    }
+}
+
+/* === New Styles for Split Card Layout === */
+.right-column-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Spotify Card Specific Styles */
+.spotify-card {
+    margin-bottom: 0; /* Remove bottom margin as gap handles spacing */
+}
+
+.spotify-card .card-header i {
+    background-color: #FA8072; /* Spotify green */
+}
+
+/* Adjusted card container layout */
+.cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+/* Ensure toolbelt card spans full width on smaller screens */
+@media (max-width: 1024px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .right-column-cards {
+        gap: 1.5rem;
+    }
+}
+
+/* Additional responsive adjustments for the split layout */
+@media (max-width: 768px) {
+    .right-column-cards {
+        gap: 1rem;
+    }
+    
+    .spotify-card iframe {
+        height: 80px; /* Smaller height on mobile */
     }
 }
 /*Experiment playground*/
