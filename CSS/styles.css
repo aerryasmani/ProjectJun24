@@ -72,7 +72,7 @@ header {
 .availability {
     background-color: var(--salmon);
     padding: 5px 10px;
-    border: 2px solid var(--black);
+    border: 3px solid var(--black);
     font-size: 0.8rem;
     display: inline-flex;
     align-items: center;
@@ -212,7 +212,7 @@ h4 {
     border: 4px solid var(--black);
     box-shadow: 6px 6px 0 var(--DarkCharcoal);
     transition: all 0.3s ease;
-    margin-top: 10px;
+    margin-top: 5px;
     align-self: flex-start;
 }
 
@@ -329,6 +329,9 @@ footer div {
     box-shadow: 12px 12px 0 var(--DarkCharcoal); /*Card Shadow*/
     padding: 1.5rem;
     transition: transform 0.3s ease;
+    filter: contrast(110%) /* Increase contrast */
+    brightness(105%) /* Slightly brighter */
+    saturate(200%);
 }
 
 .card:hover {
@@ -450,6 +453,7 @@ footer div {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     padding: 1rem 0;
+    align-items: center;
 }
 
 .tech-item {
