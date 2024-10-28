@@ -326,7 +326,7 @@ footer div {
     background-color: var(--white);
     border: 4px solid var(--black);
     border-radius: 0px;
-    box-shadow: 12px 12px 0 var(--black); /*Card Shadow*/
+    box-shadow: 12px 12px 0 var(--DarkCharcoal); /*Card Shadow*/
     padding: 1.5rem;
     transition: transform 0.3s ease;
 }
