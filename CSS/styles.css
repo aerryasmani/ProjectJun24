@@ -1,6 +1,7 @@
 :root {
     --yellow: #FFD700;
     --light-green: #90EE90;
+    --spotify-green: #F5DEB3     ;
     --salmon: #FA8072;
     --black: #000000;
     --white: #FFFFF4;
@@ -358,10 +359,10 @@ h5 span {
 
 /* Spotify Card Specific Styles */
 .spotify-card {
-    background-color: var(--black);
-    color: var(--white);
+    background-color: var(--spotify-green);
+    color: var(--black);
     border: 6px solid var(--black);
-    background-image: url("../img/Paper 18.png");
+    
     border-radius: 0px;
     box-shadow: 12px 12px 0 var(--DarkCharcoal);
     padding: 1.5rem;
@@ -570,10 +571,10 @@ h5 span {
   /* Footer Styles */
 /* Footer Styles */
 .footer-container {
-    background-color: var(--DarkCharcoal);
+    background-color: var(--salmon);
     padding: 2rem;
     border: 6px solid var(--black);
-    box-shadow: 12px 12px 0 var(--salmon);
+    box-shadow: 12px 12px 0 var(--DarkCharcoal);
     width: 100%;
     position: relative;
     margin-top: auto;
