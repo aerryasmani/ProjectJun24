@@ -240,24 +240,6 @@ h5 span {
     box-shadow: 5px 5px 0 var(--light-green);
 }
 
-footer {
-    background-color: var(--salmon);
-    margin: 20px -30px -30px;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 4px solid var(--black);
-    border-bottom: 4px solid var(--black);
-}
-
-footer div {
-    font-size: 1rem;
-    white-space: nowrap;
-    padding: 0 100px;
-    align-items: center;
-}
-
 .design-credit {
     text-align: center;
     font-size: 0.8rem;
@@ -311,7 +293,7 @@ footer div {
         font-size: 2.5rem;
     }
     h4 {
-        font-size: 1.0rem;
+        font-size: 1.rem;
     }
     footer {
         flex-direction: left;
@@ -331,42 +313,65 @@ footer div {
     }
 }
 
+/* Updated Cards Layout System */
 .cards-container {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: 1.5rem;
     width: 100%;
     margin: 0 auto;
-    box-shadow: 12px 12px 0 var(--dark-charcoal);
 }
 
-.card {
+/* Toolbelt Card Specific Styles */
+.toolbelt-card {
+    grid-column: 1;
     background-color: var(--white);
     border: 6px solid var(--black);
-    background-image: url("../img/2259.jpg");
     background-image: url("../img/Paper 18.png");
     border-radius: 0px;
-    box-shadow: 12px 12px 0 var(--DarkCharcoal); /*Card Shadow*/
+    box-shadow: 12px 12px 0 var(--DarkCharcoal);
     padding: 1.5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    filter: contrast(110%) /* Increase contrast */
-    brightness(105%) /* Slightly brighter */
-    saturate(200%);
+    filter: contrast(110%) brightness(105%) saturate(200%);
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 15px 15px 0 var(--salmon), 0 0 20px rgba(255, 255, 255, 0.5);
+/* Timeline and Spotify Cards Container */
+.right-column-cards {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.card.dark {
+/* Timeline Card Specific Styles */
+.timeline-card {
     background-color: var(--black);
     color: var(--white);
+    border: 6px solid var(--black);
+    background-image: url("../img/Paper 18.png");
+    border-radius: 0px;
+    box-shadow: 12px 12px 0 var(--DarkCharcoal);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    filter: contrast(110%) brightness(105%) saturate(200%);
 }
 
+/* Spotify Card Specific Styles */
+.spotify-card {
+    background-color: var(--black);
+    color: var(--white);
+    border: 6px solid var(--black);
+    background-image: url("../img/Paper 18.png");
+    border-radius: 0px;
+    box-shadow: 12px 12px 0 var(--DarkCharcoal);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    filter: contrast(110%) brightness(105%) saturate(200%);
+}
+
+/* Common Card Elements */
 .card-header {
     display: flex;
-    
     gap: 0.75rem;
     margin-bottom: 1.5rem;
     color: inherit;
@@ -385,108 +390,24 @@ footer div {
     font-weight: bold;
 }
 
-.card-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.card-content p {
-    font-size: 0.875rem;
-}
-
-/* Update work link styles for 1st cards */
-.work-link {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--black); /* Changed to white for dark theme */
-    text-decoration: none;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-}
-
-.work-link:last-child {
-    border-bottom: none;
-}
-
-.work-link i {
-    color: var(--white);
-    opacity: 1; /* Changed from 0 to always show */
-    transform: translateX(0); /* Remove initial transform */
-    transition: all 0.3s ease;
-}
-.work-link:hover {
-    color: var(--light-green);
-}
-
-
-.work-link:hover i {
-    color: var(--light-green);
-    transform: translateX(5px); /* Add slight movement on hover */
-}
-
-
-/* Media Query for tablets and larger screens */
-@media (min-width: 768px) {
-    .cards-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Update work link styles for 2nd cards */
-.work-link-2 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--white); /* Changed to white for dark theme */
-    text-decoration: none;
-    padding: 0.75rem 0;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.75);
-    transition: all 0.3s ease;
-}
-
-.work-link-2:last-child {
-    border-bottom: none;
-}
-
-.work-link-2 i {
-    color: var(--white);
-    opacity: 1; /* Changed from 0 to always show */
-    transform: translateX(0); /* Remove initial transform */
-    transition: all 0.3s ease;
-}
-.work-link-2:hover {
-    color: var(--light-green);
-}
-
-.work-link-2:hover i {
-    color: var(--light-green);
-    transform: translateX(5px); /* Add slight movement on hover */
-}
-
-/* Add these new styles to your existing CSS file */
-
-/* Technology Toolbelt Styles */
+/* Toolbelt Grid Layout */
 .tech-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     padding: 1rem 0;
-    align-items: center;
 }
 
 .tech-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1rem;
 }
 
 .tech-circle {
-    width: 60px;  /* Increased from 50px */
-    height: 60px; /* Increased from 50px */
+    width: 60px;
+    height: 60px;
     background-color: var(--light-green);
     border: 4px solid var(--black);
     border-radius: 50%;
@@ -496,87 +417,72 @@ footer div {
     transition: all 0.3s ease;
     box-shadow: 4px 2px 0 var(--DarkCharcoal);
 }
-
 .tech-circle i {
-    font-size: 1.8rem;  /* Increased from 1.2rem */
+    font-size: 1.5rem;  /* Increased from 1.8rem */
     color: var(--black);
 }
 
+/* Adjust the text size below icons */
 .tech-item span {
-    font-size: 0.9rem;  /* Slightly increased from 0.8rem */
+    font-size: 1rem;  /* Slightly increased from 0.9rem */
     font-weight: 500;
     text-align: center;
 }
 
-.tech-item:hover .tech-circle {
-    background-color: var(--black);
-    transform: translateY(-2px);
+/* Hover Effects */
+.toolbelt-card:hover,
+.timeline-card:hover,
+.spotify-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 15px 15px 0 var(--salmon), 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
-.tech-item:hover .tech-circle i {
-    color: var(--light-green);
-}
-
-/* Update cards container for new layout */
-.cards-container {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-/* Responsive adjustments */
+/* Responsive Design */
 @media (max-width: 1024px) {
-    .cards-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .toolbelt-card {
-        grid-column: span 2;
-    }
-}
-
-@media (max-width: 768px) {
     .cards-container {
         grid-template-columns: 1fr;
     }
     
-    .toolbelt-card {
-        grid-column: span 1;
+    .right-column-cards {
+        grid-column: 1;
     }
     
+    .toolbelt-card {
+        grid-column: 1;
+    }
+}
+
+@media (max-width: 768px) {
     .tech-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
     }
-
+    
     .tech-circle {
-        width: 55px;  /* Slightly smaller on mobile but still larger than original */
+        width: 50px;
         height: 55px;
     }
-
-    .tech-circle i {
-        font-size: 1.5rem;  /* Slightly smaller on mobile but still larger than original */
+    
+    .spotify-card iframe {
+        height: 80px;
     }
 }
 
 @media (max-width: 480px) {
     .tech-grid {
-        grid-template-columns: repeat(3, 1fr); /* Changed from 2 to 3 columns */
-        gap: 0.75rem; /* Reduced gap for better mobile spacing */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
     }
-
+    
     .tech-circle {
-        width: 50px;  /* Adjusted for mobile */
+        width: 50px;
         height: 50px;
     }
-
-    .tech-circle i {
-        font-size: 1.4rem;  /* Adjusted for mobile */
-    }
-
+    
     .tech-item span {
-        font-size: 0.8rem;  /* Adjusted for mobile */
+        font-size: 0.8rem;
     }
 }
-
 /* === New Styles for Split Card Layout === */
 .right-column-cards {
     display: flex;
@@ -661,3 +567,146 @@ footer div {
     background-position: 0 0, 25px 25px;
     z-index: -1;
   }
+  /* Footer Styles */
+/* Footer Styles */
+.footer-container {
+    background-color: var(--DarkCharcoal);
+    padding: 2rem;
+    border: 6px solid var(--black);
+    box-shadow: 12px 12px 0 var(--salmon);
+    width: 100%;
+    position: relative;
+    margin-top: auto;
+}
+
+/* Add this wrapper style to ensure footer stays at bottom */
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    gap: 2rem;
+    max-width: 64rem;
+    margin: 2rem auto;
+    padding-bottom: 2rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    color: var(--white);
+    max-width: 100%;
+}
+
+.footer-left, .footer-right {
+    display: flex;
+    align-items: left;
+    gap: 12px;
+}
+
+.footer-credit {
+    color: var(--white);
+    font-size: 0.9rem;
+}
+
+.footer-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--white);
+}
+
+.footer-nav li {
+    display: flex;
+    align-items: left;
+}
+
+.footer-nav a {
+    color: var(--white);
+    text-decoration: none;
+    box-shadow: inset 0 -1px 0 hsla(0, 0%, 100%, 0.4);
+    transition: all 0.3s ease;
+    padding: 2px 4px;
+}
+
+.footer-nav a:hover {
+    box-shadow: inset 0 -1.2em 0 hsla(0, 0%, 100%, 0.4);
+    color: var(--light-green);
+}
+
+.footer-nav li p {
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+.footer-nav li:hover ~ li p {
+    animation: wave-animation 0.3s infinite;
+}
+
+@keyframes wave-animation {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(20deg);
+    }
+    75% {
+        transform: rotate(-15deg);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 1.5rem;
+        box-shadow: 8px 8px 0 var(--salmon);
+    }
+    
+    .footer-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Create 2 columns */
+        gap: 1rem;
+        align-items: start;
+    }
+
+    .footer-left {
+        justify-content: flex-start;
+    }
+
+    .footer-right {
+        justify-content: flex-end;
+    }
+
+    .footer-nav {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        padding: 1rem;
+        box-shadow: 6px 6px 0 var(--salmon);
+        border-width: 4px;
+    }
+    
+    .page-wrapper {
+        margin: 1rem auto;
+        padding-bottom: 1rem;
+    }
+
+    .footer-nav {
+        gap: 12px;
+    }
+
+    .footer-content {
+        gap: 0.75rem;
+    }
+
+    .footer-left, .footer-right {
+        gap: 8px;
+    }
+}
