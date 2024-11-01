@@ -713,8 +713,6 @@ h5 span {
 }
 
 /*Spotify Playground*/
-<!-- Add this CSS to your stylesheet -->
-<style>
     #spotify-widget {
         width: 100%;
         min-height: 152px; /* Same as your iframe height */
