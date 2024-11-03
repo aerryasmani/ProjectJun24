@@ -201,7 +201,7 @@
                 <div class="card dark spotify-card">
                     <div class="card-header">
                         <i class="fab fa-spotify"></i>
-                        <h3>On repeat 🔂</h3>
+                        <h3>Now Playing 🎵</h3>
                     </div>
                     <div class="card-content">
                         <div id="spotify-root">
@@ -215,6 +215,8 @@
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
                             loading="lazy">
                             </iframe>
+                        <div id="spotify-widget">
+                            <div class="loading">Loading...</div>
                         </div>
                     </div>
                 </div>
@@ -235,6 +237,7 @@
             </div>
         </footer>
     </div>
+<<<<<<< HEAD
     <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
     <script type="module">
@@ -245,5 +248,54 @@
         document.getElementById('spotify-root')
       );
     </script>   
+=======
+    <script>
+        const NETLIFY_FUNCTION_URL = 'https://scintillating-maamoul-133348.netlify.app/.netlify/functions/spotify-now-playing';
+        const spotifyWidget = document.getElementById('spotify-widget');
+    
+        async function updateNowPlaying() {
+            try {
+                const response = await fetch(NETLIFY_FUNCTION_URL);
+                if (!response.ok) throw new Error('Failed to fetch');
+                
+                const data = await response.json();
+                
+                if (!data.isPlaying) {
+                    spotifyWidget.innerHTML = `
+                        <div class="not-playing">
+                            <p>Not currently playing</p>
+                            <p>Last played track will appear here</p>
+                        </div>
+                    `;
+                    return;
+                }
+    
+                spotifyWidget.innerHTML = `
+                    <div class="spotify-track">
+                        <img src="${data.albumImageUrl}" alt="${data.album}">
+                        <div class="track-info">
+                            <a class="track-name" href="${data.songUrl}" target="_blank" rel="noopener noreferrer">
+                                ${data.title}
+                            </a>
+                            <div class="artist-name">${data.artist}</div>
+                            <div class="album-name">${data.album}</div>
+                        </div>
+                    </div>
+                `;
+            } catch (error) {
+                console.error('Error fetching now playing:', error);
+                spotifyWidget.innerHTML = `
+                    <div class="error-message">
+                        Failed to load Spotify data
+                    </div>
+                `;
+            }
+        }
+    
+        // Update immediately and then every 30 seconds
+        updateNowPlaying();
+        setInterval(updateNowPlaying, 30000);
+    </script>
+>>>>>>> 6af64bf4b1f4e77d4229b144926ff6b9440e5137
 </body>
 </html>
