@@ -204,16 +204,6 @@
                         <h3>Now Playing 🎵</h3>
                     </div>
                     <div class="card-content">
-                            <iframe 
-                                style="border-radius:12px" 
-                                src="https://open.spotify.com/embed/track/65npSVkyhQVDDqOsbOW0Aa?utm_source=generator" 
-                                width="100%" 
-                                height="152" 
-                                frameborder="0" 
-                                allowfullscreen 
-                                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                                loading="lazy">
-                            </iframe>
                         <div id="spotify-widget">
                             <div class="loading">Loading...</div>
                         </div>
@@ -236,7 +226,7 @@
             </div>
         </footer>
     </div>
-=======
+
     <script>
         const NETLIFY_FUNCTION_URL = 'https://scintillating-maamoul-133348.netlify.app/.netlify/functions/spotify-now-playing';
         const spotifyWidget = document.getElementById('spotify-widget');
@@ -284,6 +274,5 @@
         updateNowPlaying();
         setInterval(updateNowPlaying, 30000);
     </script>
->>>>>>> 6af64bf4b1f4e77d4229b144926ff6b9440e5137
 </body>
 </html>
