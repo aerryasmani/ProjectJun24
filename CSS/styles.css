@@ -349,7 +349,7 @@ h5 span {
     background-color: var(--black);
     color: var(--white);
     border: 6px solid var(--black);
-    background-image: url("../img/Paper 18.png");
+    /*background-image: url("../img/Paper 18.png");*/
     border-radius: 0px;
     box-shadow: 12px 12px 0 var(--DarkCharcoal);
     padding: 1.5rem;

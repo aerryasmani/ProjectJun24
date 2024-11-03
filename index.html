@@ -191,7 +191,7 @@
                     <div class="card-content">
                         <h5><span>2022 - Now</span></h5>
                         <br>
-                        <h4>Software QA Engineer @???</h4>
+                        <h4>Software QA Engineer @ Petronas Digital</h4>
                         <br>
                         <p>Being part of the Analytics Reporting Dashboard Team, and me being in charge of UX ,data quality, and somewhat Scrum Master. Currently learning API testing</p>
                     </div>
@@ -204,7 +204,8 @@
                         <h3>On repeat 🔂</h3>
                     </div>
                     <div class="card-content">
-                        <iframe 
+                        <div id="spotify-root">
+                            <iframe 
                             style="border-radius:12px" 
                             src="https://open.spotify.com/embed/track/65npSVkyhQVDDqOsbOW0Aa?utm_source=generator" 
                             width="100%" 
@@ -213,7 +214,8 @@
                             allowfullscreen 
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
                             loading="lazy">
-                        </iframe>
+                            </iframe>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -233,5 +235,15 @@
             </div>
         </footer>
     </div>
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script type="module">
+      import { SpotifyNowPlaying } from './components/SpotifyNowPlaying.js';
+      
+      ReactDOM.render(
+        React.createElement(SpotifyNowPlaying),
+        document.getElementById('spotify-root')
+      );
+    </script>   
 </body>
 </html>
