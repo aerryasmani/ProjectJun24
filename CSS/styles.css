@@ -362,7 +362,6 @@ h5 span {
     background-color: var(--spotify-green);
     color: var(--black);
     border: 6px solid var(--black);
-    
     border-radius: 0px;
     box-shadow: 12px 12px 0 var(--DarkCharcoal);
     padding: 1.5rem;
@@ -734,7 +733,7 @@ h5 span {
     gap: 1.5rem;
     align-items: center;
     padding: 0.5rem;
-    background: var(--DarkCharcoal);
+    background: var(--white);
     border-radius: 12px;
     transition: all 0.3s ease;
 }
