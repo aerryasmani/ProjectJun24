@@ -734,7 +734,7 @@ h5 span {
     gap: 1.5rem;
     align-items: center;
     padding: 0.5rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--DarkCharcoal);
     border-radius: 12px;
     transition: all 0.3s ease;
 }
