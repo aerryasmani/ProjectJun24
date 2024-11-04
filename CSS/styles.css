@@ -359,7 +359,7 @@ h5 span {
 
 /* Spotify Card Specific Styles */
 .spotify-card {
-    background-color: var(--salmon);
+    background-color: var(--spotify-green);
     color: var(--black);
     border: 6px solid var(--black);
     
@@ -718,7 +718,7 @@ h5 span {
     color: var(--black);
     border: 6px solid var(--black);
     border-radius: 0px;
-    box-shadow: 12px 12px 0 var(--DarkCharcoal);
+    box-shadow: 12px 12px 0 var(--salmon);
     padding: 1.5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     filter: contrast(110%) brightness(105%) saturate(200%);
