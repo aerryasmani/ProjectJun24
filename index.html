@@ -206,6 +206,7 @@
                     <div class="card-content">
                         <div id="spotify-widget">
                             <div class="loading">Loading...</div>
+                            
                         </div>
                     </div>
                 </div>
@@ -229,7 +230,7 @@
 
     <script>
         async function getNowPlaying() {
-            console.log('Fetching now playing...'); // Debug log
+            console.log('Fetching now playing...');
             try {
                 const response = await fetch('https://spotify-player-server.netlify.app/.netlify/functions/spotify-now-playing', {
                     method: 'GET',
@@ -238,25 +239,34 @@
                     }
                 });
                 
-                console.log('Response status:', response.status); // Debug log
+                console.log('Response status:', response.status);
                 const data = await response.json();
-                console.log('Response data:', data); // Debug log
+                console.log('Response data:', data);
                 
                 const spotifyWidget = document.getElementById('spotify-widget');
                 
                 if (response.ok && data) {
                     if (data.isPlaying) {
                         spotifyWidget.innerHTML = `
-                            <div class="now-playing">
-                                <a href="${data.songUrl}" target="_blank" rel="noopener noreferrer">
-                                    ${data.title} - ${data.artist}
-                                </a>
+                            <div class="spotify-track">
+                                <img src="${data.albumImageUrl}" alt="${data.album}" class="album-cover" />
+                                <div class="track-info">
+                                    <a href="${data.songUrl}" target="_blank" rel="noopener noreferrer" class="track-name">
+                                        ${data.title}
+                                    </a>
+                                    <div class="artist-name">${data.artist}</div>
+                                    <div class="album-name">${data.album}</div>
+                                    <div class="progress-bar">
+                                        <div class="progress-indicator"></div>
+                                    </div>
+                                </div>
                             </div>
                         `;
                     } else {
                         spotifyWidget.innerHTML = `
                             <div class="not-playing">
-                                Not playing anything right now
+                                <i class="fab fa-spotify"></i>
+                                <p>Not playing anything right now</p>
                             </div>
                         `;
                     }
@@ -266,8 +276,9 @@
                         data: data
                     });
                     spotifyWidget.innerHTML = `
-                        <div class="error">
-                            Unable to fetch currently playing track (${response.status})
+                        <div class="error-message">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <p>Unable to fetch currently playing track</p>
                         </div>
                     `;
                 }
@@ -275,8 +286,9 @@
                 console.error('Fetch error:', error);
                 const spotifyWidget = document.getElementById('spotify-widget');
                 spotifyWidget.innerHTML = `
-                    <div class="error">
-                        Connection error: ${error.message}
+                    <div class="error-message">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <p>Connection error: ${error.message}</p>
                     </div>
                 `;
             }
