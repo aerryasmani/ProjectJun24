@@ -43,14 +43,16 @@ body {
 }
 
 .page-wrapper {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto;
     gap: 2rem;
     max-width: 64rem;
     margin: 2rem auto;
-}
+  }
 
-.container {
+  .container {
+    grid-column: 1 / 3;
     width: 100%;
     max-width: 1000px;
     border-radius: 0px;
@@ -65,10 +67,8 @@ body {
     z-index: 1;
     background-image: url("../img/Paper 15.png");
     background-image: url("../img/Paper 18.png");
-    filter: contrast(110%) /* Increase contrast */
-    brightness(105%) /* Slightly brighter */
-    saturate(200%);
-}
+    filter: contrast(110%) brightness(105%) saturate(200%);
+  }
 
 header {
     display: flex;
@@ -329,6 +329,7 @@ h5 span {
 /* Toolbelt Card Specific Styles */
 .toolbelt-card {
     grid-column: 1;
+    grid-row: 2;
     background-color: var(--white);
     border: 6px solid var(--black);
     background-image: url("../img/Paper 18.png");
@@ -337,8 +338,21 @@ h5 span {
     padding: 1.5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     filter: contrast(110%) brightness(105%) saturate(200%);
-}
+  }
 
+  /* Add styles for the "Latest Medium Article" card */
+.medium-article-card {
+    grid-column: 2;
+    background-color: var(--white);
+    border: 6px solid var(--black);
+    background-image: url("../img/Paper 18.png");
+    border-radius: 0px;
+    box-shadow: 12px 12px 0 var(--DarkCharcoal);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    filter: contrast(110%) brightness(105%) saturate(200%);
+  }
+  
 /* Timeline and Spotify Cards Container */
 .right-column-cards {
     grid-column: 2;
@@ -349,22 +363,25 @@ h5 span {
 
 /* Timeline Card Specific Styles */
 .timeline-card {
-    background-color: var(--DarkCharcoal);
-    color: var(--white);
-    border: 6px solid var(--black);
-    /*background-image: url("../img/Paper 18.png");*/
-    border-radius: 0px;
-    box-shadow: 16px 12px 0 var(--DarkCharcoal);
-    padding: 1.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    filter: contrast(110%) brightness(105%) saturate(200%);
+  grid-column: 2;
+  grid-row: 2;
+  background-color: var(--DarkCharcoal);
+  color: var(--white);
+  border: 6px solid var(--black);
+  border-radius: 0px;
+  box-shadow: 16px 12px 0 var(--DarkCharcoal);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  filter: contrast(110%) brightness(105%) saturate(200%);
 }
 .timeline-card .card-header i {
     background-color: var(--light-green);
     color: var(--black);
   }
 /* Spotify Card Specific Styles */
-.spotify-card {
+.spotify-card .now-playing {
+    grid-column: 1;
+    grid-row: 3;
     background-color: var(--spotify-green);
     color: var(--black);
     border: 6px solid var(--black);
@@ -373,8 +390,20 @@ h5 span {
     padding: 1.5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     filter: contrast(110%) brightness(105%) saturate(200%);
-}
+  }
 
+  .latest-medium-article {
+    grid-column: 2;
+    grid-row: 2;
+    background-color: var(--white);
+    border: 6px solid var(--black);
+    background-image: url("../img/Paper 18.png");
+    border-radius: 0px;
+    box-shadow: 12px 12px 0 var(--DarkCharcoal);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    filter: contrast(110%) brightness(105%) saturate(200%);
+  }
 /* Common Card Elements */
 .card-header {
     display: flex;
@@ -458,6 +487,13 @@ h5 span {
     .toolbelt-card {
         grid-column: 1;
     }
+    .medium-article-card {
+        grid-column: 1;
+      }
+    .page-wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+    }
 }
 
 @media (max-width: 768px) {
@@ -498,6 +534,13 @@ h5 span {
     gap: 1.5rem;
 }
 
+
+.toolbelt-card,
+.timeline-card,
+.spotify-card,
+.latest-medium-article {
+  grid-column: 1;
+}
 /* Spotify Card Specific Styles */
 .spotify-card {
     margin-bottom: 0; /* Remove bottom margin as gap handles spacing */
@@ -865,3 +908,15 @@ h5 span {
     box-shadow: 2px 2px 0 var(--DarkCharcoal);
   }
 
+/* Medium Article Card Specific Styles */
+.medium-article-card {
+    grid-column: 1;
+    background-color: var(--white);
+    border: 6px solid var(--black);
+    background-image: url("../img/Paper 18.png");
+    border-radius: 0px;
+    box-shadow: 12px 12px 0 var(--DarkCharcoal);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    filter: contrast(110%) brightness(105%) saturate(200%);
+  }
