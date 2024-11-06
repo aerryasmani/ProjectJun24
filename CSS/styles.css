@@ -362,7 +362,6 @@ h5 span {
     background-color: var(--spotify-green);
     color: var(--black);
     border: 6px solid var(--black);
-    
     border-radius: 0px;
     box-shadow: 12px 12px 0 var(--DarkCharcoal);
     padding: 1.5rem;
@@ -713,67 +712,130 @@ h5 span {
 }
 
 /*Spotify Playground*/
-    #spotify-widget {
-        width: 100%;
-        min-height: 152px; /* Same as your iframe height */
-    }
+.spotify-card {
+    background-color: var(--spotify-green);
+    color: var(--black);
+    border: 6px solid var(--black);
+    border-radius: 0px;
+    box-shadow: 12px 12px 0 var(--DarkCharcoal);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    filter: contrast(110%) brightness(105%) saturate(200%);
+}
 
+#spotify-widget {
+    width: 100%;
+    min-height: 152px;
+}
+
+.spotify-track {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 0.5rem;
+    background: var(--white);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.album-cover {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    border: 3px solid var(--black);
+    box-shadow: 4px 4px 0 var(--DarkCharcoal);
+}
+
+.track-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.track-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--black);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.track-name:hover {
+    color: var(--salmon);
+    text-decoration: underline;
+}
+
+.artist-name {
+    font-size: 1rem;
+    color: var(--DarkCharcoal);
+    font-weight: 500;
+}
+
+.album-name {
+    font-size: 0.9rem;
+    color: var(--DarkCharcoal);
+    opacity: 0.8;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+.progress-indicator {
+    width: 30%;
+    height: 100%;
+    background: var(--salmon);
+    border-radius: 2px;
+    animation: progress 30s linear infinite;
+}
+
+.not-playing, .error-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    height: 152px;
+    text-align: center;
+    color: var(--DarkCharcoal);
+}
+
+.not-playing i, .error-message i {
+    font-size: 2rem;
+    opacity: 0.7;
+}
+
+@keyframes progress {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+@media (max-width: 768px) {
     .spotify-track {
-        display: flex;
-        align-items: center;
         gap: 1rem;
-        padding: 1rem;
+        padding: 0.5rem;
     }
 
-    .spotify-track img {
-        width: 120px;
-        height: 120px;
-        border-radius: 8px;
-        object-fit: cover;
-    }
-
-    .track-info {
-        flex: 1;
+    .album-cover {
+        width: 80px;
+        height: 80px;
     }
 
     .track-name {
-        color: var(--text-color, #fff);
-        font-size: 1.1rem;
-        font-weight: bold;
-        text-decoration: none;
-        margin-bottom: 0.5rem;
-        display: block;
-    }
-
-    .track-name:hover {
-        text-decoration: underline;
+        font-size: 1rem;
     }
 
     .artist-name {
-        color: var(--text-color-secondary, #ccc);
         font-size: 0.9rem;
-        margin-bottom: 0.25rem;
     }
 
     .album-name {
-        color: var(--text-color-secondary, #ccc);
         font-size: 0.8rem;
     }
-
-    .loading {
-        color: var(--text-color-secondary, #ccc);
-        text-align: center;
-        padding: 1rem;
-    }
-
-    .error-message {
-        color: #ff4444;
-        text-align: center;
-        padding: 1rem;
-    }
-
-    .not-playing {
-        color: var(--text-color-secondary, #ccc);
-        text-align: center;
-        padding: 1rem;
-    }
+}
