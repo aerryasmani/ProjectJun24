@@ -6,6 +6,13 @@
     --black: #000000;
     --white: #FFFFF4;
     --DarkCharcoal: #292C33;
+
+    /* Dark mode variables */
+    --dark-bg: #1a1a1a;
+    --dark-text: #FFFFF4;
+    --dark-card-bg: #292C33;
+    --dark-border: #4a4a4a;
+    --dark-hover: #3a3a3a;
 }
 
 * {
@@ -865,3 +872,195 @@ h5 span {
     box-shadow: 2px 2px 0 var(--DarkCharcoal);
   }
 
+  /* Dark mode styles */
+[data-theme="dark"] {
+    /* Background and text colors */
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+[data-theme="dark"] .container {
+    background-color: var(--dark-card-bg);
+    border-color: var(--dark-border);
+    box-shadow: 24px 18px 0 rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .card {
+    background-color: var(--dark-card-bg);
+    border-color: var(--dark-border);
+}
+
+[data-theme="dark"] .toolbelt-card,
+[data-theme="dark"] .timeline-card,
+[data-theme="dark"] .timeline-card-2,
+[data-theme="dark"] .spotify-card {
+    background-color: var(--dark-card-bg);
+    border-color: var(--dark-border);
+    box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .tech-circle {
+    background-color: var(--dark-hover);
+    border-color: var(--dark-border);
+}
+
+[data-theme="dark"] .nav-button {
+    background-color: var(--dark-hover);
+    border-color: var(--dark-border);
+    color: var(--dark-text);
+}
+
+/* Dark Mode Toggle Button Styles */
+/* Dark Mode Toggle Button Styles */
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.toggle-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.dark-toggle {
+    appearance: none;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background-color: var(--DarkCharcoal);
+    border-radius: 15px;
+    border: 3px solid var(--black);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.toggle-track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+
+.toggle-icon {
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.toggle-sun {
+    opacity: 1;
+}
+
+.toggle-moon {
+    opacity: 0.5;
+}
+
+/* Toggle indicator */
+.dark-toggle::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--white);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+/* Dark theme specific styles */
+[data-theme="dark"] .dark-toggle::after {
+    transform: translateX(30px);
+}
+
+[data-theme="dark"] .toggle-sun {
+    opacity: 0.5;
+}
+
+[data-theme="dark"] .toggle-moon {
+    opacity: 1;
+}
+
+/* Hover effects */
+.dark-toggle:hover {
+    opacity: 0.9;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .dark-mode-toggle {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .dark-toggle {
+        width: 50px;
+        height: 25px;
+    }
+    
+    .toggle-track {
+        padding: 0 4px;
+    }
+    
+    .toggle-icon {
+        font-size: 12px;
+        width: 16px;
+        height: 16px;
+    }
+    
+    .dark-toggle::after {
+        width: 17px;
+        height: 17px;
+    }
+    
+    [data-theme="dark"] .dark-toggle::after {
+        transform: translateX(25px);
+    }
+}
+
+/* Additional mobile optimization */
+@media (max-width: 480px) {
+    .dark-toggle {
+        width: 45px;
+        height: 22px;
+        border-width: 2px;
+    }
+    
+    .toggle-track {
+        padding: 0 3px;
+    }
+    
+    .toggle-icon {
+        font-size: 11px;
+        width: 14px;
+        height: 14px;
+    }
+    
+    .dark-toggle::after {
+        width: 15px;
+        height: 15px;
+        top: 2px;
+    }
+    
+    [data-theme="dark"] .dark-toggle::after {
+        transform: translateX(23px);
+    }
+}
