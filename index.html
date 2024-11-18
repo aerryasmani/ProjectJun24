@@ -63,13 +63,28 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Darkmode -->
+    <script src="js/darkMode.js"></script>
 </head>
 
 <body>
     <div class="page-wrapper">
         <div class="container">
+
             <!-- Header Section -->
             <header>
+                            <!-- Dark Mode 
+            <div class="dark-mode-toggle">
+                <div class="toggle-wrapper">
+                    <button class="dark-toggle">
+                        <div class="toggle-track">
+                            <span class="toggle-icon toggle-sun">☀️</span>
+                            <span class="toggle-icon toggle-moon">🌙</span>
+                        </div>
+                    </button>
+                </div>
+            </div>-->
+
                 <div class="logo-availability">
                     <div class="logo">HeiyoAerry</div>
                     <div class="availability">
@@ -77,7 +92,7 @@
                         Available for work
                     </div>
                 </div>
-                
+                  
                 <!-- Navigation -->
                 <nav>
                     <a href="https://dribbble.com/AerryAsmni" class="nav-button">
@@ -189,8 +204,22 @@
                         <span>Scrum Master</span>
                     </div>
                 </div>
+            </div> <!--Sini-->
+            <div class="cards-container">
+                <div class="cert-card">
+                    <h3>My go-to toolbelt</h3>
+                    <div class="tech-chips">
+                        <span class="tech-chip">Katalon Studio</span>
+                        <span class="tech-chip">Azure DevOps</span>
+                        <span class="tech-chip">SQL</span>
+                        <span class="tech-chip">API Testing</span>
+                        <span class="tech-chip">Scrumban</span>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <h3>My go-to toolbelt</h3>
+                </div>
             </div>
-            
             <!-- Experience Section -->
             <div class="right-column-cards">
                 <div class="timeline-card">
@@ -210,7 +239,7 @@
                             <span class="tech-chip">SQL</span>
                             <span class="tech-chip">API Testing</span>
                             <span class="tech-chip">Scrumban</span>
-                          </div>
+                        </div>
                     </div>
                 </div>
 
@@ -244,7 +273,7 @@
             </div>
         </footer>
     </div>
-
+    
     <script>
         async function getNowPlaying() {
             console.log('Fetching now playing...');
@@ -317,6 +346,7 @@
         // Update every 30 seconds
         setInterval(getNowPlaying, 30000);
         </script>
+        
 </body>
 </html>
 
