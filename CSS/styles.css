@@ -6,6 +6,13 @@
     --black: #000000;
     --white: #FFFFF4;
     --DarkCharcoal: #292C33;
+
+    /* Dark mode variables */
+    --dark-bg: #1a1a1a;
+    --dark-text: #FFFFF4;
+    --dark-card-bg: #292C33;
+    --dark-border: #4a4a4a;
+    --dark-hover: #3a3a3a;
 }
 
 * {
