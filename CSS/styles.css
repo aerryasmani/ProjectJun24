@@ -320,7 +320,7 @@ h5 span {
 /* Updated Cards Layout System */
 .cards-container {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
     width: 100%;
     margin: 0 auto;
@@ -448,7 +448,7 @@ h5 span {
 /* Responsive Design */
 @media (max-width: 1024px) {
     .cards-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .right-column-cards {
@@ -473,6 +473,9 @@ h5 span {
     
     .spotify-card iframe {
         height: 80px;
+    }
+    .cards-container {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -513,7 +516,12 @@ h5 span {
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
 }
-
+.toolbelt-card,
+.timeline-card,
+.spotify-card {
+    width: 100%;
+    padding: 1.5rem;
+}
 /* Ensure toolbelt card spans full width on smaller screens */
 @media (max-width: 1024px) {
     .cards-container {
@@ -856,12 +864,52 @@ h5 span {
   }
   
   .tech-chip {
-    background-color: var(--spotify-green);
+    background-color: var(--light-green);
     color: var(--black);
     padding: 0.5rem 1rem;
     border-radius: 10px;
-    font-size: 0.9rem;
+    font-size: 14px;/*0.9rem;*/
     font-weight: 500;
     box-shadow: 2px 2px 0 var(--DarkCharcoal);
   }
 
+  .cert-card {
+    background-color: var(--white);
+    border: 6px solid var(--black);
+    background-image: url("../img/Paper 18.png");
+    border-radius: 0px;
+    box-shadow: 12px 12px 0 var(--DarkCharcoal);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    filter: contrast(110%) brightness(105%) saturate(200%);
+  }
+  
+  .cert-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+  
+  .cert-circle {
+    width: 60px;
+    height: 60px;
+    background-color: var(--light-green);
+    border: 4px solid var(--black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 4px 2px 0 var(--DarkCharcoal);
+  }
+  
+  .cert-circle i {
+    font-size: 1.5rem;
+    color: var(--black);
+  }
+  
+  .cert-item span {
+    font-size: 1rem;
+    font-weight: 500;
+  }
