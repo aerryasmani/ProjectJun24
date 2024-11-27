@@ -394,7 +394,7 @@ h5 span {
   
   .card-header i {
     font-size: 1.5rem;
-    background-color: var(--salmon);
+    background-color: var(--spotify-green);
     padding: 0.5rem;
     border: 3px solid var(--black);
     border-radius: 50%;
